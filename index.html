@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse line chart</title>
+    <link rel="icon" type="image/x-icon" href="src/favicon.ico">
+    <style>
+        div {
+            margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <canvas id="a"></canvas>
+    </div>
+    <script src="node_modules/chart.js/dist/chart.js"></script>
+    <script>
+        // Lines
+        const chartA = new Chart(document.getElementById('a'), {
+            data: {
+                datasets: [{
+                    type: 'line',
+                    label: 'Who will become the next PM of ...?',
+                    backgroundColor: 'rgba(3, 4, 94, 0.8)',
+                    data: [4, 6, 8, 10, 2, 3, 4, 6]
+                }],
+                labels: ['01/02/2022', '07/02/2022', '14/02/2022', '21/02/2022', '28/02/2022', '01/03/2022', '14/03/2022', '21/03/2022'],
+            },
+            options: {
+                scales: {
+                    y: {
+                        max: 10,
+                        min: 1,
+                        reverse: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
